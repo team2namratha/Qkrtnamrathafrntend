@@ -31,7 +31,7 @@ export class HomePageService {
     pay={cardNumber:CardNumber1,CVV:cvv1,Expiry:ex,ProdCost:cost,ProdID:pid}
     console.log(pay)
 
-    let tempVar = this.http.post<boolean>(' http://localhost:7142/api/Function1',pay)
+    let tempVar = this.http.post<boolean>('http://localhost:7142/api/Function1',pay)
     return tempVar
   }
 
@@ -39,7 +39,7 @@ export class HomePageService {
   
     console.log(emailID)
 
-    let tempVar = this.http.get<boolean>('https://localhost:5001/api/customer/AddNewSubscriber?emailID='+emailID)
+    let tempVar = this.http.get<boolean>('https://qkrtbckend-namrathaappservice.azurewebsites.net/api/customer/AddNewSubscriber?emailID='+emailID)
     console.log(tempVar)
     return tempVar
   }
@@ -51,7 +51,7 @@ export class HomePageService {
     user={emailID:userEmailID, password:userPassword,usertype:type};
     console.log(user)
 
-    let result=this.http.post<number>('https://login-quickcart.azurewebsites.net/api/LoginFunction?code=hYL_gxChWY6V4kVghX5SeOb_frdfhZ5G0ND7Bn8Jqck0AzFu4mauVA==',user)
+    let result=this.http.post<number>('https://qkrtloginnamrathaazfunc.azurewebsites.net/api/Function1?code=Fl0EYjCZSAoIbA5TUUnq9-AoyVzJOkuyvwASk5JpMhKiAzFuNfFq2Q==',user)
     return result
 
   }
